@@ -1,4 +1,10 @@
 import createMuiTheme, { Theme } from '@material-ui/core/styles/createMuiTheme';
+import red from '@material-ui/core/colors/red';
+import blue from '@material-ui/core/colors/blue';
+import green from '@material-ui/core/colors/green';
+import amber from '@material-ui/core/colors/amber';
+import purple from '@material-ui/core/colors/purple';
+
 import { GameDefinition } from '../services/game-service';
 
 export type CustomTheme = Theme & CustomProps;
@@ -25,6 +31,6 @@ export const theme: CustomTheme = {
     size: {
       tile: 50,
     },
-    tileColors: ['red', 'blue', 'green'],
+    tileColors: [red[600], blue[600], green[600], purple[600], amber[600]],
   },
 };
