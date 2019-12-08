@@ -1,9 +1,22 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import App from './App';
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router';
+import ThemeProvider from '@material-ui/styles/ThemeProvider';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+import { store } from './redux/config';
+import { history } from './redux/Router/router';
+import { theme } from './style/theme';
+
+import App from './App';
+test('Renders learn react link', () => {
+  const { getByText } = render(
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
+      </ConnectedRouter>
+    </Provider>,
+  );
 });
